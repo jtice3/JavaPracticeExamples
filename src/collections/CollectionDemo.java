@@ -56,7 +56,9 @@ public class CollectionDemo {
 
         //Using comparator to sort students, you can also implement Comparable
         Collections.sort(students, (s1, s2) -> {
-            return (s1.grades > s2.grades) ? -1 : (s1.grades < s2.grades) ? 1 : 0;
+            if (s1.grades > s2.grades) return -1;
+            if (s1.grades < s2.grades) return 1;
+            return 0;
         });
 
         System.out.println("\nList of students sorted by grades:");
