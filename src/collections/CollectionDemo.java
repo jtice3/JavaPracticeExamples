@@ -47,7 +47,6 @@ public class CollectionDemo {
         list.forEach(System.out::println); // Stream API, uses Lambda expression
 
         List<Student> students = new ArrayList<>();
-
         students.add(new Student(1, 55));
         students.add(new Student(2, 95));
         students.add(new Student(3, 85));
@@ -56,8 +55,12 @@ public class CollectionDemo {
 
         //Using comparator to sort students, you can also implement Comparable
         Collections.sort(students, (s1, s2) -> {
-            if (s1.grades > s2.grades) return -1;
-            if (s1.grades < s2.grades) return 1;
+            if (s1.grades > s2.grades) {
+                return -1;
+            }
+            if (s1.grades < s2.grades) {
+                return 1;
+            }
             return 0;
         });
 
@@ -65,7 +68,6 @@ public class CollectionDemo {
         for (Student s : students) {
             System.out.println(s);
         }
-
     }
 }
 
